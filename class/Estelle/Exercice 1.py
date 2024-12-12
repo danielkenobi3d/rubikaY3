@@ -1,6 +1,6 @@
 import pymel.core as pm
 
-def replace_cube():
+def rep_cube():
     locators = pm.ls('locator*',type='transform')
     for locator in locators:
         cube = pm.polyCube()
