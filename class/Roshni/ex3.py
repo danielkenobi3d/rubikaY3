@@ -1,8 +1,6 @@
-#1
-
 import pymel.core as pm
 
-def staircase_3d(n):
+def triangle1(n):
     for i in range(n):
         for j in range(i + 1):
             x = j * 2
@@ -13,13 +11,9 @@ def staircase_3d(n):
             pm.move(x, y, z)
 
 
-staircase_3d(5)
-
-#2
-
 import pymel.core as pm
 
-def staircase_3d_rotated(n):
+def triangle1_rotated(n):
     for i in range(n):
         for j in range(i + 1):
             x = i * 2
@@ -30,13 +24,9 @@ def staircase_3d_rotated(n):
             pm.move(x, y, z)
 
 
-staircase_3d_rotated(5)
-
-#3
-
 import pymel.core as pm
 
-def staircase_3d_rotated_mirrored(n):
+def triangle1_rotated_mirrored(n):
     for i in range(n):
         for j in range(i + 1):
             x = i * 2
@@ -49,13 +39,9 @@ def staircase_3d_rotated_mirrored(n):
             pm.move(mirrored_x, y, z)
 
 
-staircase_3d_rotated_mirrored(5)
-
-#4
-
 import pymel.core as pm
 
-def staircase_3d_mirrored(n):
+def triangle1_mirrored(n):
     for i in range(n):
         for j in range(i + 1):
             x = j * 2
@@ -67,6 +53,3 @@ def staircase_3d_mirrored(n):
 
             mirrored_x = -x
             pm.move(mirrored_x, y, z)
-
-
-staircase_3d_mirrored(5)
