@@ -23,3 +23,4 @@ def FK_rig():
     control_group= pm.group('nurbsCircle*', name='Control_group')
 
 FK_rig()
+
