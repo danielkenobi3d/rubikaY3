@@ -2,7 +2,6 @@
 
 import pymel.core as pm
 
-
 def staircase_3d(n):
     for i in range(n):
         for j in range(i + 1):
@@ -20,7 +19,6 @@ staircase_3d(5)
 
 import pymel.core as pm
 
-
 def staircase_3d_rotated(n):
     for i in range(n):
         for j in range(i + 1):
@@ -37,7 +35,6 @@ staircase_3d_rotated(5)
 #3
 
 import pymel.core as pm
-
 
 def staircase_3d_rotated_mirrored(n):
     for i in range(n):
@@ -57,7 +54,6 @@ staircase_3d_rotated_mirrored(5)
 #4
 
 import pymel.core as pm
-
 
 def staircase_3d_mirrored(n):
     for i in range(n):
