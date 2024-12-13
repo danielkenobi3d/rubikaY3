@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 +import pymel.core as pm
 cube_return = pm.polyCube()
 print(cube_return)
@@ -10,6 +11,8 @@ creation_cube.width.set(5)
 creation_cube.subdivisionsDepth.set(10)
 creation_cube.depth.set(creation_cube.depth.get()+2)
 =======
+=======
+>>>>>>> b69564bf2da018fb594b10e63961dc27937d6a1c
 import pymel.core as pm
 
 for each in pm.ls('locator*', type='transform'):
@@ -23,4 +26,7 @@ for each in list_of_object :
     pm.matchTransforms(cube1, list_of_object)
     pm.matchTransforms(cube2, list_of_object)
 
+<<<<<<< HEAD
+>>>>>>> b69564bf2da018fb594b10e63961dc27937d6a1c
+=======
 >>>>>>> b69564bf2da018fb594b10e63961dc27937d6a1c
