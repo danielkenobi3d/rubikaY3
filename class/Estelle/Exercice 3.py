@@ -9,7 +9,7 @@ def staircase_3d(n):
             y = i * 2
             z = 0
 
-            cube = pm.polyCube(w=1, h=1, d=1)[0]
+            cube = pm.polyCube(w=1, h=1, d=1)
             pm.move(x, y, z)
 
 
@@ -26,7 +26,7 @@ def staircase_3d_rotated(n):
             y = j * 2
             z = 0
 
-            cube = pm.polyCube(w=1, h=1, d=1)[0]
+            cube = pm.polyCube(w=1, h=1, d=1)
             pm.move(x, y, z)
 
 
@@ -45,7 +45,7 @@ def staircase_3d_rotated_mirrored(n):
 
             mirrored_x = -x
 
-            cube = pm.polyCube(w=1, h=1, d=1)[0]
+            cube = pm.polyCube(w=1, h=1, d=1)
             pm.move(mirrored_x, y, z)
 
 
@@ -62,7 +62,7 @@ def staircase_3d_mirrored(n):
             y = i * 2
             z = 0
 
-            cube = pm.polyCube(w=1, h=1, d=1)[0]
+            cube = pm.polyCube(w=1, h=1, d=1)
             pm.move(x, y, z)
 
             mirrored_x = -x
