@@ -13,3 +13,6 @@ def triangle():
 
             cube = pm.polyCube(w=cube_size, h=cube_size, d=cube_size)[0]
             pm.move(x_pos, y_pos, z_pos)
+
+
+ca marche je crois
