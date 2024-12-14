@@ -19,3 +19,6 @@ list_of_controller = []
         pm.parentConstraint(new_control,joints, mo=True)
 
     control_group= pm.group('nurbsCircle*', name='Control_group'
+
+
+ca marche pas
