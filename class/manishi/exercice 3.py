@@ -8,21 +8,21 @@ def triangle(size, positionx=0, positiony=0):
             pm.move(transform, (x + 2) + positionx, (y - 2) + positiony, 0, moveXYZ=True)
 
 
-def triangle2(size, positionx=8, positiony=8):
+def triangle2(size, positionx=10, positiony=10):
     for y in range(size):
         for x in range(size - y):
             transform, creation_node = pm.polyCube()
             pm.move(transform, (-x + 2) + positionx, (-y - 2) + positiony, 0, moveXYZ=True)
 
 
-def triangle3(size, positionx=0, positiony=8):
+def triangle3(size, positionx=0, positiony=10):
     for y in range(size):
         for x in range(size - y):
             transform, creation_node = pm.polyCube()
             pm.move(transform, (x + 2) + positionx, (-y - 2) + positiony, 0, moveXYZ=True)
 
 
-def triangle4(size, positionx=8, positiony=0):
+def triangle4(size, positionx=10, positiony=0):
     for y in range(size):
         for x in range(size - y):
             transform, creation_node = pm.polyCube()
