@@ -1,25 +1,40 @@
 import pymel.core as pm
 
-def FK_rig():
-    locator_list = pm.ls(selection=True)
+
+def FKrig():
+    list_objects = pm.ls('locator*', type='transform')
+    joint_group = pm.group(empty=True, name='Joints_Group')
     jnt_list = []
-    control_list = []
 
-    jnt_group= pm.group(empty=True, name='Joints_group')
+    ctrl_group = pm.group(empty=True, name='ctrl_Group')
+    ctrl_list = []
 
-    for locator in locator_list:
+    previous_control = None
+    previous_jnt = None
 
-        new_joint=pm.joint(name= 'joint'+locator)
-        pm.matchTransform(new_joint,locator)
+    for locator in list_objects:
+        position = locator.getTranslation(space='world')
+        new_joint = pm.joint(position=position, name="joint" + locator)
         jnt_list.append(new_joint)
-        pm.delete(locator)
 
-    for joints in jnt_list:
-        new_control = pm.circle()
-        pm.matchTransform(new_control,joints)
-        control_list.append(new_control)
-        pm.parentConstraint(new_control,joints, mo=True)
+        if not previous_jnt:
+            pm.parent(new_joint, joint_group)
 
-    control_group= pm.group('nurbsCircle*', name='Control_group')
+        previous_jnt = new_joint
+
+    for jnt in jnt_list:
+        new_ctrl, create = pm.circle()
+        pm.matchTransform(new_ctrl, jnt)
+        ctrl_list.append(new_ctrl)
+        pm.parentConstraint(new_ctrl, jnt, mo=True)
+
+        if not previous_control:
+            pm.parent(new_ctrl, ctrl_group)
+        else:
+            pm.parent(new_ctrl, previous_control)
+
+        previous_control = new_ctrl
+    pm.delete('locator*')
+
 
 FK_rig()
