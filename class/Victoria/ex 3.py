@@ -15,4 +15,4 @@ def triangle():
             pm.move(x_pos, y_pos, z_pos)
 
 
-ca marche je crois
+# ca marche je crois
