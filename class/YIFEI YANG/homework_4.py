@@ -12,7 +12,7 @@ def FK_rig():
         pm.delete(locator)
 
     for joint in jnt_list:
-        new_control, _ = pm.circle(name=f'control_{joint}')
+        new_control, creation_node = pm.circle(name=f'control_{joint}')
         pm.matchTransform(new_control, joint)
         control_list.append(new_control)
         pm.parentConstraint(new_control, joint, mo=True)
