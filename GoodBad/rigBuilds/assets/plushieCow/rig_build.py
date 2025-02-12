@@ -1,4 +1,6 @@
-from rigBuilds.assets.male.custom_rig import rigBiped
+from rigBuilds.assets.plushieCow.custom_rig import rigBiped
+import importlib
+importlib.reload(rigBiped)
 import pymel.core as pm
 
 

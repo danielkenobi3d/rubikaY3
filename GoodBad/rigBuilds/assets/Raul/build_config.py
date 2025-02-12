@@ -11,7 +11,8 @@ build = {
         ],
     'load data': [
         ('load skinning', ['rig_build.load_skinning_data']),
-        ('load shapes', ['rig_build.load_shapes_data'])
+        ('load shapes', ['rig_build.load_shapes_data']),
+        ('add custom deformers', ['rig_build.custom_deformers'])
     ],
     'finalize': [
         ('cleanup', ['rig_build.cleanup']),
