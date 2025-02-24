@@ -2,11 +2,12 @@ build_order = ['source', 'rig', 'load data',  'finalize']
 build = {
     'source': [
         ('Import geometry', ['rig_build.import_geometry']),
-        ('Import reference points', ['rig_build.import_reference_points'])
+        ('Import reference files', ['rig_build.import_reference_points'])
         ],
     'rig': [
         ('build biped rig', ['rig_build.build_biped_rig']),
-        ('custom rig', ['rig_build.custom_rig'])
+        ('custom rig', ['rig_build.custom_rig']),
+        ('build facial',['rig_facial.build'])
         ],
     'load data': [
         ('load skinning', ['rig_build.load_skinning_data']),
