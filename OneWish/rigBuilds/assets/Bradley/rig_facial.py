@@ -11,11 +11,14 @@ from builder.pipeline import environment
 
 
 def build():
-    create_facial_rig()
-    create_jaw_layers()
+    env = environment.Environment()
+    facial_definition = env.get_variables_from_path(environment.pipe_config.facial_definition)
+    rigBlendShapeControls.RigBlendShapeControls(root='C_facialControls_reference_pnt')
+
+    rigFacial.RigFacial(facial_definition.definition, prefix_geometry_list=facial_definition.prefix_geometry_list)
 
 
-def create_facial_rig():
+"""def create_facial_rig():
     env = environment.Environment()
     facial_definition = env.get_variables_from_path(environment.pipe_config.default_facial_definition)
 
@@ -68,3 +71,4 @@ if __name__ == '__main__':
     # float_switch.attribute_output_false >> pm.Attribute('blendShape1.{}'.format('C_character00_mouthClosed_msh'))
     # rigFacial.RigFacial(facial_rig_definition.eyes_dict)
 
+"""
