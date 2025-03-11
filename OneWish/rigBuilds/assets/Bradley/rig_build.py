@@ -1,9 +1,12 @@
 from rigBuilds.assets.male.custom_rig import rigBiped
 from rigBuilds.assets.Bradley.custom_rig import face_ctrls
 from rigBuilds.assets.Bradley.custom_rig import eyes_ref
+from rigBuilds.assets.Bradley.custom_rig import eyes_viz_switch
 import pymel.core as pm
 import importlib
 importlib.reload(face_ctrls)
+importlib.reload(eyes_viz_switch)
+
 
 
 def build_biped_rig():
@@ -12,6 +15,9 @@ def build_biped_rig():
     pm.parent('geo', 'rig')
     pm.parent('environment', 'rig')
 
+
 def custom_rig():
-    face_ctrls.build()
-    #eyes = eyes_ref.RigByped()
+    # face_ctrls.build()
+    eyes_viz_switch.build()
+
+    # eyes = eyes_ref.RigByped()
