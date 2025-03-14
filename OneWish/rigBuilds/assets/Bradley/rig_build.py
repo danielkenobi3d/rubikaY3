@@ -6,6 +6,8 @@ import pymel.core as pm
 import importlib
 importlib.reload(face_ctrls)
 importlib.reload(eyes_viz_switch)
+importlib.reload(rigBiped)
+
 
 
 

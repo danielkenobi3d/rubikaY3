@@ -7,8 +7,10 @@ build = {
     'rig': [
         ('build biped rig', ['rig_build.build_biped_rig']),
         ('custom rig', ['rig_build.custom_rig']),
-        #('facial rig', ['rig_facial.build']),
         ],
+    #'facial rig': [
+        #('create facial rig', ['rig_facial.build']),
+        #],
     'load data': [
         ('load skinning', ['rig_build.load_skinning_data']),
         ('load shapes', ['rig_build.load_shapes_data'])
