@@ -1,159 +1,126 @@
+from tkinter.constants import RIGHT
+
 prefix_geometry_list = []
 
 definition = dict(
-    jaw=dict(
-        type='blend_shape_definition',
-        isSymetrical=False,
-        baseMesh='character',
-        control='C_facial00_mouth_ctr',
-        blendShapes=dict(midOpen={'connection': 'jawOpen', 'value': 5},
-                         fullOpen={'connection': 'jawOpen', 'value': 10},
-                         Mouth_down={'connection' : 'move_mouth', 'value':-10},
-                         puffFront={'connection': 'jawOpen', 'value': -10},
-                         mouthLeft={'connection': 'mouthLR', 'value': 10},
-                         mouthRight={'connection': 'mouthLR', 'value': -10},
-                         upperLipPucker={'connection': 'upperLipRollInOut', 'value': 10},
-                         upperLipLipsIn={'connection': 'upperLipRollInOut', 'value': -10},
-                         lowLipPucker={'connection': 'lowLipRollInOut', 'value': 10},
-                         lowLipLipsIn={'connection': 'lowLipRollInOut', 'value': -10},
-                         kiss={'connection': 'wideNarrow', 'value': -10},
-                         bucinator={'connection': 'wideNarrow', 'value': 10},
-                         jawForward={'connection': 'jawForwardBackward', 'value': 10},
-                         jawBackward={'connection': 'jawForwardBackward', 'value': -10},
-                         upperLipUp={'connection': 'upperLipUp', 'value': 10},
-                         lowLipDwn={'connection': 'lowLipDown', 'value': 10},
-                         fullSmileLipUp={'connection': 'fullSmileLipUp', 'value': 10},
-                         fullSmile={'connection': 'fullSmile', 'value': 10}
-                         ),
-        attributes=dict(jawOpen={'type': 'float', 'min': 0, 'max': 10},
-                        mouthLR={'type': 'float', 'min': -10, 'max': 10},
-                        upperLipRollInOut={'type': 'float', 'min': -10, 'max': 10},
-                        lowLipRollInOut={'type': 'float', 'min': -10, 'max': 10},
-                        wideNarrow={'type': 'float', 'min': -10, 'max': 10},
-                        jawForwardBackward={'type': 'float', 'min': -10, 'max': 10},
-                        upperLipUp={'type': 'float', 'min': 0, 'max': 10},
-                        lowLipDown={'type': 'float', 'min': 0, 'max': 10},
-                        fullSmileLipUp={'type': 'float', 'min': 0, 'max': 10},
-                        fullSmile={'type': 'float', 'min': 0, 'max': 10},
-                        move_mouth={'type': 'float', 'min': 0, 'max': 10}
-                        ),
-        order=['move_mouth', 'jawOpen', 'mouthLR', 'upperLipRollInOut', 'lowLipRollInOut', 'wideNarrow', 'jawForwardBackward',
-               'upperLipUp', 'lowLipDown', 'fullSmileLipUp', 'fullSmile']
-        ),
-    nose=dict(
-        type='blend_shape_definition',
-        isSymetrical=False,
-        baseMesh='character',
-        control='C_facial00_nose_ctr',
-        blendShapes=dict(LnoseExpand={'connection': 'LNose', 'value': 10},
-                         LnoseContract={'connection': 'LNose', 'value': -10},
-                         RnoseExpand={'connection': 'RNose', 'value': 10},
-                         RnoseContract={'connection': 'RNose', 'value': -10},
-                         ),
-        attributes=dict(LNose={'type': 'float', 'min': -10, 'max': 10},
-                        RNose={'type': 'float', 'min': -10, 'max': 10},
-                        ),
-        order=['LNose', 'RNose']
-        ),
-    brow=dict(
+left_eye=dict(
         type='blend_shape_definition',
         isSymetrical=True,
-        baseMesh='character',
+        baseMesh='main',
         control='L_facial00_brow_ctr',
-        blendShapes=dict(LOutBrowUp={'connection': 'browOut', 'value': 10},
-                         LOutBrowDwn={'connection': 'browOut', 'value': -10},
-                         LInBrowUp={'connection': 'browIn', 'value': 10},
-                         LInBrowDwn={'connection': 'browIn', 'value': -10},
-                         LeyesCls={'connection': 'eyeCls', 'value': 10},
-                         LeyesCls50={'connection': 'eyeCls', 'value': 5},
-                         LeyesOpen={'connection': 'eyeCls', 'value': -10},
-
+        blendShapes=dict(L_eye_wide={'connection': 'Wide', 'value': 10},
+                         L_eye_blink={'connection': 'Blink', 'value': 10},
+                         L_eye_half={'connection': 'Blink', 'value': 5},
+                         L_eye_sad={'connection': 'Sad', 'value': -10},
+                         L_eye_angry={'connection': 'Angry', 'value': 10},
+                         L_eye_happy={'connection': 'Happy', 'value': 10},
                          ),
-        attributes=dict(browOut={'type': 'float', 'min': -10, 'max': 10},
-                        browIn={'type': 'float', 'min': -10, 'max': 10},
-                        eyeCls={'type': 'float', 'min': -10, 'max': 10},
+        attributes=dict(Wide={'type': 'float', 'min': 0, 'max': 10},
+                        Blink={'type': 'float', 'min': 0, 'max': 10},
+                        Sad={'type': 'float', 'min': 0, 'max': 10},
+                        Angry={'type': 'float', 'min': 0, 'max': 10},
+                        Happy={'type': 'float', 'min': 0, 'max': 10},
                         ),
-        order=['browOut', 'browIn', 'eyeCls']
+        order=['Blink', 'Happy', 'Sad', 'Angry', 'Wide']
         ),
-    mouthCorner=dict(
+right_eye=dict(
         type='blend_shape_definition',
         isSymetrical=True,
-        baseMesh='character',
-        control='L_facial00_mouthCorner_ctr',
-        blendShapes=dict(Lsmile={'connection': 'cornerUpDown', 'value': 10},
-                         Lfrown={'connection': 'cornerUpDown', 'value': -10},
-                         Lwide={'connection': 'cornerOutIn', 'value': 10},
-                         Lkiss={'connection': 'cornerOutIn', 'value': -10},
-                         LupLipIn={'connection': 'uplipOutIn', 'value': 10},
-                         LupLipOut={'connection': 'uplipOutIn', 'value': -10},
-                         LlowLipOut={'connection': 'lowLipOutIn', 'value': 10},
-                         LlowLipIn={'connection': 'lowLipOutIn', 'value': -10},
+        baseMesh='main',
+        control='L_facial00_brow_ctr',
+        blendShapes=dict(R_eye_wide={'connection': 'Wide', 'value': 10},
+                         R_eye_blink={'connection': 'Blink', 'value': 10},
+                         R_eye_half={'connection': 'Blink', 'value': 5},
+                         R_eye_sad={'connection': 'Sad', 'value': -10},
+                         R_eye_angry={'connection': 'Angry', 'value': 10},
+                         R_eye_happy={'connection': 'Happy', 'value': 10},
                          ),
-        attributes=dict(cornerUpDown={'type': 'float', 'min': -10, 'max': 10},
-                        cornerOutIn={'type': 'float', 'min': -10, 'max': 10},
-                        uplipOutIn={'type': 'float', 'min': -10, 'max': 10},
-                        lowLipOutIn={'type': 'float', 'min': -10, 'max': 10},
-
+        attributes=dict(Wide={'type': 'float', 'min': 0, 'max': 10},
+                        Blink={'type': 'float', 'min': 0, 'max': 10},
+                        Sad={'type': 'float', 'min': 0, 'max': 10},
+                        Angry={'type': 'float', 'min': 0, 'max': 10},
+                        Happy={'type': 'float', 'min': 0, 'max': 10},
                         ),
-        order=['cornerUpDown', 'cornerOutIn', 'uplipOutIn', 'lowLipOutIn']
+        order=['Blink', 'Happy', 'Sad', 'Angry', 'Wide']
         ),
-    cheeks=dict(
+left_brow=dict(
         type='blend_shape_definition',
         isSymetrical=True,
-        baseMesh='character',
-        control='L_facial00_cheek_ctr',
-        blendShapes=dict(Lsquint={'connection': 'squint', 'value': 10},
-                         LnoseCorrugator={'connection': 'noseCorrugator', 'value': 10},
+        baseMesh='main',
+        control='L_facial00_brow_ctr',
+        blendShapes=dict(L_eyebrow_up={'connection': 'Up_Down', 'value': 10},
+                         L_eyebrow_down={'connection': 'Up_Down', 'value': -10},
+                         L_eyebrow_sad={'connection': 'Sad', 'value': 10},
                          ),
-        attributes=dict(squint={'type': 'float', 'min': 0, 'max': 10},
-                        noseCorrugator={'type': 'float', 'min': 0, 'max': 10},),
-        order=['squint', 'noseCorrugator']
+        attributes=dict(Up_Down={'type': 'float', 'min': -10, 'max': 10},
+                        Sad={'type': 'float', 'min': 0, 'max': 10},
+                        ),
+        order=['Up_Down', 'Sad']
         ),
-    browCorrugator=dict(
+right_brow=dict(
+        type='blend_shape_definition',
+        isSymetrical=True,
+        baseMesh='main',
+        control='L_facial00_brow_ctr',
+        blendShapes=dict(R_eyebrow_up={'connection': 'Up_Down', 'value': 10},
+                         R_eyebrow_down={'connection': 'Up_Down', 'value': -10},
+                         R_eyebrow_sad={'connection': 'Sad', 'value': 10},
+                         ),
+        attributes=dict(Up_Down={'type': 'float', 'min': -10, 'max': 10},
+                        Sad={'type': 'float', 'min': 0, 'max': 10},
+                        ),
+        order=['Up_Down', 'Sad']
+        ),
+mouth=dict(
         type='blend_shape_definition',
         isSymetrical=False,
-        baseMesh='character',
-        control='C_facial00_foreHead_ctr',
-        blendShapes=dict(
-                         browCorrugator={'connection': 'corrugator', 'value': 10},
-                         eyesCorrection={'connection': 'eyesCorrection', 'value': 10},
-                         joyEyesSquint={'connection': 'joyEyesSquint', 'value': 10},
+        baseMesh='main',
+        control='L_facial00_brow_ctr',
+        blendShapes=dict(Mouth_frown={'connection': 'Frown', 'value': 10},
+                         Mouth_Smile={'connection': 'Smile', 'value': 5},
+                         Mouth_Pout={'connection': 'Pout', 'value': 10},
+                         Mouth_yelling={'connection': 'Yell', 'value': 10},
+                         Mouth_wide_smil={'connection': 'Smile', 'value': 10},
+                         Mouth_O={'connection': 'Awe', 'value': 10},
+                         Mouth_pursed_li={'connection': 'Kissy', 'value': 10},
+                         Mouth_open_sad={'connection': 'Sad', 'value': 10},
+                         Mouth_left={'connection': 'Left_Right', 'value': 10},
+                         Mouth_right={'connection': 'Left_Right', 'value': -10},
+                         mouth_up={'connection': 'Up_Down', 'value': 10},
+                         Mouth_down={'connection': 'Up_Down', 'value': -10},
                          ),
-        attributes=dict(
-                        corrugator={'type': 'float', 'min': 0, 'max': 10},
-                        eyesCorrection={'type': 'float', 'min': 0, 'max': 10},
-                        joyEyesSquint={'type': 'float', 'min': 0, 'max': 10},),
-        order=['corrugator', 'eyesCorrection', 'joyEyesSquint']
-
-
-    )
-)
-eyes_dict = dict(
-    eyes=dict(
+        attributes=dict(Frown={'type': 'float', 'min': 0, 'max': 10},
+                        Smile={'type': 'float', 'min': 0, 'max': 10},
+                        Pout={'type': 'float', 'min': 0, 'max': 10},
+                        Yell={'type': 'float', 'min': 0, 'max': 10},
+                        Awe={'type': 'float', 'min': 0, 'max': 10},
+                        Kissy={'type': 'float', 'min': 0, 'max': 10},
+                        Sad={'type': 'float', 'min': 0, 'max': 10},
+                        Left_Right={'type': 'float', 'min': -10, 'max': 10},
+                        Up_Down={'type': 'float', 'min': -10, 'max': 10},
+                        ),
+        order=['Smile', 'Pout', 'Frown', 'Sad', 'Yell', 'Awe', 'Kissy', 'Left_Right','Up_Down']
+        ),
+face=dict(
         type='blend_shape_definition',
-        isSymetrical=True,
-        baseMesh='character',
-        control='L_aim00_eye_grp',
-        blendShapes=dict(LlookLeft={'connection': 'rotateY', 'value': 18},
-                         LlookRight={'connection': 'rotateY', 'value': -18},
-                         LlookUp={'connection': 'rotateZ', 'value': 18},
-                         LlookDwn={'connection': 'rotateZ', 'value': -18},
+        isSymetrical=False,
+        baseMesh='main',
+        control='L_facial00_brow_ctr',
+        blendShapes=dict(Face_sparkle_ey={'connection': 'Sprakly_eyes', 'value': 10},
+                         Face_smile={'connection': 'Smile', 'value': 5},
+                         Face_squiggle_s={'connection': 'Disgust', 'value': 10},
+                         Face_Sad={'connection': 'Sad', 'value': 10},
+                         Face_surprised={'connection': 'Surprised', 'value': 10},
                          ),
-        attributes=dict(rotateY={'type': 'float', 'min': -18, 'max': 18},
-                        rotateZ={'type': 'float', 'min': -18, 'max': 18},),
-        order=['rotateY', 'rotateZ']
-    ))
+        attributes=dict(Sprakly_eyes={'type': 'float', 'min': 0, 'max': 10},
+                        Smile={'type': 'float', 'min': 0, 'max': 10},
+                        Disgust={'type': 'float', 'min': 0, 'max': 10},
+                        Sad={'type': 'float', 'min': 0, 'max': 10},
+                        Surprised={'type': 'float', 'min': -10, 'max': 10},
+                        ),
+        order=['Sprakly_eyes', 'Smile', 'Disgust', 'Sad', 'Surprised']
+        ),
 
-correctives_dict = dict(
-        jawCorrectives=dict(
-            type='blend_shape_definition',
-            isSymetrical=False,
-            baseMesh='character',
-            control='C_joint00_jaw_ctr',
-            blendShapes=dict(jawOpen={'connection': 'rotateZ', 'value': 12}),
-            attributes=dict(rotateZ={'type': 'float', 'min': 0, 'max': 10}),
-            order=['rotateZ']
-            ),
 )
 
 direct_blendshape = {
