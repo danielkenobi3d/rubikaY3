@@ -16,12 +16,13 @@ def build():
     facial_definition = env.get_variables_from_path(environment.pipe_config.default_facial_definition)
 
     facial_controls = rigBlendShapeControls.RigBlendShapeControls(root='C_facialControls_reference_pnt')
+    # facial_controls.set_parent(pm.ls('C_main00_head_sknjnt')[0])
 
     rigFacial.RigFacial(facial_definition.definition,
                         prefix_geometry_list=facial_definition.prefix_geometry_list)
 
-    pm.parentConstraint('neck_C0_head_jnt', facial_controls.rig_system.controls, mo=True)
-    pm.scaleConstraint('neck_C0_head_jnt', facial_controls.rig_system.controls, mo=True)
+    pm.parentConstraint('C_main00_head_sknjnt', facial_controls.rig_system.controls, mo=True)
+    pm.scaleConstraint('C_main00_head_sknjnt', facial_controls.rig_system.controls, mo=True)
 
     #pm.setAttr('character.visibility', False)
     for each in facial_definition.direct_blendshape:
