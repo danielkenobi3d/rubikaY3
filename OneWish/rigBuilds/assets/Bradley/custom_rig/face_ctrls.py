@@ -2,6 +2,7 @@ import pymel.core as pm
 from RMPY.rig import rigSingleJoint
 from RMPY.rig import rigStaticLayer
 from RMPY.core import data_save_load
+from RMPY.rig import rigLaces
 
 def build():
      #L_static_ebrows_root = pm.ls('L_eyebrows_reference_points')[0]

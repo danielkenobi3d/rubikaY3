@@ -192,7 +192,7 @@ class RigByped(rigBase.RigBase):
         self.cog.custom_world_align(self.cog.reset_controls[0])
         self.cog.set_parent(self.rig_world, create_hierarchy_joints=True, output_joint_rig=self.rig_output)
         self.create.constraint.node_base(self.spine.backward_root, self.hip.root, point=True)
-        self.create.constraint.node_base(self.cog.tip, self.hip.root, orient=True, mo=True)
+        self.create.constraint.node_base(self.cog.tip, self.hip.root, orient=True, scale=True, mo=True)
         self.hip._create_output_points(self.cog, create_hierarchy_joints=True, output_joint_rig=self.rig_output)
         self.spine.set_parent(self.cog, create_hierarchy_joints=True, output_joint_rig=self.rig_output)
 
