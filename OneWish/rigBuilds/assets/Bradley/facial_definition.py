@@ -72,7 +72,7 @@ definition = dict(
         isSymetrical=False,
         baseMesh='main',
         control='C_facial00_face_ctr',
-        blendShapes=dict(Face_sparkle_ey={'connection': 'Sprakly_eyes', 'value': 10},
+        blendShapes=dict(Face_sparkle_eye={'connection': 'Sprakly_eyes', 'value': 10},
                          Face_smile={'connection': 'Smile', 'value': 5},
                          Face_squiggle_s={'connection': 'Disgust', 'value': 10},
                          Face_Sad={'connection': 'Sad', 'value': 10},
@@ -82,7 +82,7 @@ definition = dict(
                         Smile={'type': 'float', 'min': 0, 'max': 10},
                         Disgust={'type': 'float', 'min': 0, 'max': 10},
                         Sad={'type': 'float', 'min': 0, 'max': 10},
-                        Surprised={'type': 'float', 'min': -10, 'max': 10},
+                        Surprised={'type': 'float', 'min': 0, 'max': 10},
                         ),
         order=['Sprakly_eyes', 'Smile', 'Disgust', 'Sad', 'Surprised']
         ),
