@@ -1,6 +1,6 @@
 from tkinter.constants import RIGHT
 
-prefix_geometry_list = ['eyelashes']
+prefix_geometry_list = ['eyelashes','lower_teeth','upper_teeth']
 
 definition = dict(
     left_eye=dict(
