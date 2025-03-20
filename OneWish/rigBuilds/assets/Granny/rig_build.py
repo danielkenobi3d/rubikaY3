@@ -1,8 +1,8 @@
 from rigBuilds.assets.male.custom_rig import rigBiped
-from OneWish.rigBuilds.assets.default_character.rig_build import facial_rig
+from rubikaY3.OneWish.rigBuilds.assets.default_character import rig_facial
 import pymel.core as pm
-import pymel.core as importlib
-importlib.reload(facial_rig)
+import importlib
+
 
 def build_biped_rig():
     rig_biped = rigBiped.RigByped()
@@ -12,3 +12,6 @@ def build_biped_rig():
 
 def custom_rig():
     facial_rig.build()
+
+if __name__=='__main__':
+    build_biped_rig()

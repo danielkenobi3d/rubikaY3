@@ -9,6 +9,5 @@ def build():
     jaw_static_layers = rigStaticLayer.StaticLayer('body', name='jaw')
     rig_jaw = rigJaw.RigJaw(rig_system=jaw_static_layers.rig_system)
     rig_jaw.create_point_base('C_jawstatic00_reference_pnt', 'C_jawstatic01_reference_pnt')
-
     data_save_load.load_skin_cluster(*jaw_static_layers.static_geometries)
 
