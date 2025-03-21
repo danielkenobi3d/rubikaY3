@@ -1,4 +1,4 @@
-from rigBuilds.assets.male.custom_rig import rigBiped
+from rigBuilds.assets.Granny.custom_rig import rigBiped
 from rubikaY3.OneWish.rigBuilds.assets.default_character import rig_facial
 import pymel.core as pm
 import importlib
