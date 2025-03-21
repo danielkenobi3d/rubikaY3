@@ -11,7 +11,7 @@ definition = dict(
         blendShapes=dict(L_eye_wide={'connection': 'Wide', 'value': 10},
                          L_eye_blink={'connection': 'Blink', 'value': 10},
                          L_eye_half={'connection': 'Blink', 'value': 5},
-                         L_eye_sad={'connection': 'Sad', 'value': -10},
+                         L_eye_sad={'connection': 'Sad', 'value': 10},
                          L_eye_angry={'connection': 'Angry', 'value': 10},
                          L_eye_happy={'connection': 'Happy', 'value': 10},
                          ),
