@@ -76,7 +76,7 @@ class RigByped(rigBase.RigBase):
                            u'C_Spine04_reference_pnt', u'C_Spine05_reference_pnt']
 
         self.neck_root = [u'C_neck00_reference_pnt', u'C_head00_reference_pnt', u'C_headTip00_reference_pnt']
-        self.eyes_root = [u'R_eye_reference_pnt', u'L_eye_reference_pnt']
+        self.eyes_root = [u'R_eyeaim_reference_pnt', u'L_eyeaim_reference_pnt']
 
         self.breast_root = [u'{}_breast00_reference_pnt']
         self.toes_root = [u'{}_toes00_reference_grp']
@@ -192,7 +192,7 @@ class RigByped(rigBase.RigBase):
         self.cog.custom_world_align(self.cog.reset_controls[0])
         self.cog.set_parent(self.rig_world, create_hierarchy_joints=True, output_joint_rig=self.rig_output)
         self.create.constraint.node_base(self.spine.backward_root, self.hip.root, point=True)
-        self.create.constraint.node_base(self.cog.tip, self.hip.root, orient=True,scale=True, mo=True)
+        self.create.constraint.node_base(self.cog.tip, self.hip.root, orient=True, mo=True)
         self.hip._create_output_points(self.cog, create_hierarchy_joints=True, output_joint_rig=self.rig_output)
         self.spine.set_parent(self.cog, create_hierarchy_joints=True, output_joint_rig=self.rig_output)
 
