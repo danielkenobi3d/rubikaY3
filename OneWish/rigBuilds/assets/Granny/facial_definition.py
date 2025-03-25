@@ -7,8 +7,8 @@ definition = dict(
         isSymetrical=False,
         baseMesh='body',
         control='c_jaw_ctrl',
-        blendShapes=dict(jaw={'connection': 'translateY', 'value': -10},),
-        attributes=dict(translateX={'type': 'float', 'min': 0, 'max': 10},),
+        blendShapes=dict(jaw={'connection': 'translateY', 'value': 10},),
+        attributes=dict(translateY={'type': 'float', 'min': 0, 'max': 10},),
         order=['translateY']
         ),
 
