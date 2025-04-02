@@ -1,6 +1,6 @@
 from tkinter.constants import RIGHT
 
-prefix_geometry_list = ['eyelashes','lower_teeth','upper_teeth']
+prefix_geometry_list = ['eyelashes','lower_teeth','upper_teeth','goatee','beard','eyebrows']
 
 definition = dict(
     left_eye=dict(
@@ -26,11 +26,11 @@ definition = dict(
     left_brow=dict(
         type='blend_shape_definition',
         isSymetrical=True,
-        baseMesh='eyebrows',
+        baseMesh='main',
         control='L_facial00_brow_ctr',
-        blendShapes=dict(L_eyebrow_up={'connection': 'Up_Down', 'value': 10},
-                         L_eyebrow_down={'connection': 'Up_Down', 'value': -10},
-                         L_eyebrow_sad={'connection': 'Sad', 'value': 10},
+        blendShapes=dict(L_browy_up={'connection': 'Up_Down', 'value': 10},
+                         L_browy_down={'connection': 'Up_Down', 'value': -10},
+                         L_browy_sad={'connection': 'Sad', 'value': 10},
                          ),
         attributes=dict(Up_Down={'type': 'float', 'min': -10, 'max': 10},
                         Sad={'type': 'float', 'min': 0, 'max': 10},
