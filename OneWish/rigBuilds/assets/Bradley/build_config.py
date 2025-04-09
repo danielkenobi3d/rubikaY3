@@ -1,4 +1,4 @@
-build_order = ['source', 'rig', 'facial rig', 'load data',  'finalize']
+build_order = ['source', 'rig', 'load data', 'finalize']
 build = {
     'source': [
         ('Import geometry', ['rig_build.import_geometry']),
@@ -6,10 +6,8 @@ build = {
         ],
     'rig': [
         ('build biped rig', ['rig_build.build_biped_rig']),
-        ('custom rig', ['rig_build.custom_rig']),
-        ],
-    'facial rig': [
         ('create facial rig', ['rig_facial.build']),
+        ('custom rig', ['rig_build.custom_rig']),
         ],
     'load data': [
         ('load skinning', ['rig_build.load_skinning_data']),
