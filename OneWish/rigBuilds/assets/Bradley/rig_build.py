@@ -20,7 +20,7 @@ def build_biped_rig():
 
 
 def custom_rig():
-    # face_ctrls.build()
+    face_ctrls.build()
     eyes_viz_switch.build()
 
     # eyes = eyes_ref.RigByped()

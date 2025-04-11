@@ -6,10 +6,8 @@ def create_animation_points():
 
         side = 'R'
 
-        arm_controls = pm.ls(f'{namespace}:{side}_ikPoleVectorIK00_arm_ctr', f'{namespace}:{side}_ikIK00_arm_ctr',
-                        f'{namespace}:{side}_fk00_arm_ctr', f'{namespace}:{side}_fk01_arm_ctr')
-
-
+        arm_controls = pm.ls(f'{namespace}:{side}_ikPoleVectorIK00_arm_ctr', f'{namespace}:{side}_ikIK00_arm_ctr')
+                        # f'{namespace}:{side}_fk00_arm_ctr', f'{namespace}:{side}_fk01_arm_ctr')
         start_time = pm.playbackOptions(q=True, minTime=True)
         end_time = pm.playbackOptions(q=True, maxTime=True)
         original_time = pm.currentTime(q=True)
