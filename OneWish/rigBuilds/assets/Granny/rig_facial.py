@@ -11,6 +11,3 @@ def build():
     rigFacial.RigFacial(facial_definition.definition, prefix_geometry_list=facial_definition.prefix_geometry_list)
     pm.parentConstraint('C_fk00_head_ctr', 'facial_controls', mo=True)
 
-    rig_eyes = rigEyesAim.RigEyesAim()
-    rig_eyes.create_point_base(u'R_eye_reference_pnt', u'L_eye_reference_pnt', type='circle')
-

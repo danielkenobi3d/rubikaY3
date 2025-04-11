@@ -1,5 +1,5 @@
 # this the name of the geo that also has blendshapes and the blendshape should have the exact same name that the one for the body plus the name of the geo
-prefix_geometry_list = ['eyebrows', 'tongue', 'upperTeeth', 'lowerTeeth']
+prefix_geometry_list = ['eyebrows', 'tongue', 'upperTeeth', 'lowerTeeth', 'reyelash', 'leyelash']
 
 definition = dict(
     jaw=dict(
@@ -7,8 +7,8 @@ definition = dict(
         isSymetrical=False,
         baseMesh='body',
         control='c_jaw_ctrl',
-        blendShapes=dict(jaw={'connection': 'translateY', 'value': 10},),
-        attributes=dict(translateY={'type': 'float', 'min': 0, 'max': 10},),
+        blendShapes=dict(jaw={'connection': 'translateY', 'value': -10},),
+        attributes=dict(translateY={'type': 'float', 'min': -10, 'max': 0},),
         order=['translateY']
         ),
 
@@ -48,17 +48,17 @@ definition = dict(
         attributes=dict(translateX={'type': 'float', 'min': 0, 'max': 10}, ),
         order=['translateX']
     ),
-    EyebrowUpDown=dict(
-        type='blend_shape_definition',
-        isSymetrical=True,
-        baseMesh='eyebrows',
-        control='L_browUpDown_face_ctrl',
-        blendShapes=dict(LbrowsUpeyebrows={'connection': 'translateY', 'value': 10},
-                         LbrowsDowneyebrows={'connection': 'translateY', 'value': -10},
-                         ),
-        attributes=dict(translateY={'type': 'float', 'min': -10, 'max': 10}, ),
-        order=['translateY']
-    ),
+    # EyebrowUpDown=dict(
+    #     type='blend_shape_definition',
+    #     isSymetrical=True,
+    #     baseMesh='eyebrows',
+    #     control='L_browUpDown_face_ctrl',
+    #     blendShapes=dict(LbrowsUpeyebrows={'connection': 'translateY', 'value': 10},
+    #                      LbrowsDowneyebrows={'connection': 'translateY', 'value': -10},
+    #                     ),
+    #    attributes=dict(translateY={'type': 'float', 'min': -10, 'max': 10}, ),
+    #    order=['translateY']
+    #),
 
     EyebrowfaceUpDown=dict(
         type='blend_shape_definition',
