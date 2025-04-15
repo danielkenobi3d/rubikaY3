@@ -114,6 +114,7 @@ definition = dict(
         control='L_eyeclosed_face_ctrl',
         blendShapes=dict(
                          LeyesClosed = {'connection': 'translateY', 'value': -10},
+                         LeyesClosedHalf={'connection': 'translateY', 'value': -5},
                          ),
         attributes=dict(translateY={'type': 'float', 'min': -10, 'max': 0}, ),
         order=['translateY']
