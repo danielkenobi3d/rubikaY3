@@ -43,17 +43,9 @@ def build():
 
     data_save_load.load_skin_cluster(*C_static_tongue_layers.static_geometries)
 
-    C_static_mouth_root = pm.ls('mouth_reference_points')[0]
-    C_static_mouth_layers = rigStaticLayer.StaticLayer('main', name='Cstaticemouth')
-    C_static_mouth_rig = rigSingleJoint.RigSingleJoint()
-    C_static_mouth_rig.create_point_base(*C_static_mouth_root.getChildren(), static=True)
-    C_static_mouth_rig.zero_joint
-
-    data_save_load.load_skin_cluster(*C_static_mouth_layers.static_geometries)
-
 
     C_static_mouth_root = pm.ls('mouth_reference_points')[0]
-    C_static_mouth_layers = rigStaticLayer.StaticLayer('main', name='Cstaticemouth')
+    C_static_mouth_layers = rigStaticLayer.StaticLayer('main','goatee', name='Cstaticemouth')
     C_static_mouth_rig = rigSingleJoint.RigSingleJoint()
     C_static_mouth_rig.create_point_base(*C_static_mouth_root.getChildren(), static=True)
     C_static_mouth_rig.zero_joint
