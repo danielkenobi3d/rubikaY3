@@ -16,7 +16,7 @@ def build():
     data_save_load.load_skin_cluster(*R_static_lowerLid_layers.static_geometries)
 
     L_static_lowerLid_root = pm.ls('L_Lower_Lid_reference_points')[0]
-    L_static_lowerLid_layers = rigStaticLayer.StaticLayer('body','reyelash', name='LstaticeLowerLid')
+    L_static_lowerLid_layers = rigStaticLayer.StaticLayer('body','leyelash', name='LstaticeLowerLid')
     L_static_lowerLid_rig = rigSingleJoint.RigSingleJoint()
     L_static_lowerLid_rig.create_point_base(*L_static_lowerLid_root.getChildren(), static=True)
     L_static_lowerLid_rig.zero_joint
